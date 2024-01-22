@@ -4,18 +4,14 @@ export class Person {
     name = '';
     email = '';
     age = 0;
-    
-    static get new() {
-        return new Builder();
-    }
 }
 
 
 export class PersonBuilder {
     protected person = new Person();
 
-    build() {
-        return this.person
+    static get build() {
+        return new Builder();
     }
 }
 

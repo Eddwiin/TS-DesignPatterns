@@ -15,7 +15,7 @@ export class PersonComponent implements OnInit {
   }
 
   loadPersonBuilder() {
-    const person = Person.new.setName('MyTest').setEmail('Email').setPassword('azerty').setUsername('edouard').setAge(12);
+    const person = PersonBuilder.build.setName('MyTest').setEmail('Email').setPassword('azerty').setUsername('edouard').setAge(12);
 
     console.log(person);
   }
