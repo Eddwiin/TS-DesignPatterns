@@ -20,7 +20,7 @@ const lowercased = transformString('lowercase:WORLD');
 
 // DEUXIEME SOLUTION 
 const CASING_OPTION = ['uppercase', 'lowercase'] as const;
-type CASING_TYPE = typeof CASING_OPTION[keyof typeof CASING_OPTION];
+type CASING_TYPE = typeof CASING_OPTION[keyof typeof CASING_OPTION]
 type TransformStringWithArg<T extends string, K extends CASING_TYPE> = K extends `uppercase`
  ? Uppercase<T>
  : K extends 'lowercase'
