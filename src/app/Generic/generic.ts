@@ -3,7 +3,7 @@ const person = {
     lastName: 'Bill',
     email: 'marc.bill@test.com',
     age: 30
-} as const 
+} as const
 
 const arr = ["Bill", "Marc", "Eric"] as const
 
@@ -74,3 +74,8 @@ const genericClass = new GenericClass();
 genericClass.add().add().add()
 
 
+const lightColor = ["red", "yellow", "green"] as const;
+
+function createStreetLight<C extends string>(colors: C[], defaultColor?: NoInfer<C>) { }
+
+createStreetLight([...lightColor], "blue"); // Error, "blue" is not allows
