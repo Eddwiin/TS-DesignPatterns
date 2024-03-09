@@ -52,3 +52,20 @@ type OnlySubscribed<Type> = {
 }
 
 type CoolPeople = OnlySubscribed<People>;
+
+
+
+const PERSON = {
+  firstName: 'John',
+  lastName: 'Doe',
+  age: 30
+} as const;
+
+
+function getInfo<TObj extends typeof PERSON>(arg: TObj) {
+  return Object.values(arg) as Array<TObj[keyof TObj]>;
+}
+
+const info = getInfo(PERSON);
+
+console.log(info[0] === "John");
