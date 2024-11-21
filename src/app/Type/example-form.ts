@@ -8,5 +8,8 @@ interface ExampleForm {
 }
 
 type Path<T> = T extends object
-    ? { [key in keyof T]: [key] | [key, ...Path<T>]}[keyof T]
+    ? { [key in keyof T]: [key] | [key, ...Path<T[key]>]}[keyof T]
     : never
+
+
+type ExtractExampleForm =  Path<ExampleForm> 
